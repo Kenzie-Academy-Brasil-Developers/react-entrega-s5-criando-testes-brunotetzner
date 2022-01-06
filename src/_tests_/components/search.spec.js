@@ -15,15 +15,14 @@ import Providers from "../../providers/index";
 import Address from "../../components/Cep";
 import { findAllInRenderedTree } from "react-dom/test-utils";
 
-jest.mock(axios);
-const mockedAxios = axios;
-
+jest.mock("../../providers/CepProvider", () => {
+  return { useAuth: () => ({}) };
+});
 describe("search cep", () => {
   it("should be search for a cep", async () => {
     render(
       <Providers>
         <Search />
-        <Address />
       </Providers>
     );
 
@@ -35,26 +34,5 @@ describe("search cep", () => {
     await waitFor(() => {
       expect(cepField).toHaveValue(23545037);
     });
-
-    // const ceps = {
-    //   bairro: "Sepetiba",
-    //   cep: "23545037",
-    //   cidade: "Rio de Janeiro",
-    //   cidade_info: { area_km2: "1200,179", codigo_ibge: "3304557" },
-    //   estado: "RJ",
-    //   estado_info: {
-    //     area_km2: "43.781,566",
-    //     codigo_ibge: "33",
-    //     nome: "Rio de Janeiro",
-    //   },
-    //   logradouro: "Rua 1 (Acesso Est Sepetiba 4718)",
-    // };
-
-    // mockedAxios.get(cepField.toString).replyOnce(200, { data: { ceps } });
-    // const city = await screen.findByText("Rio de Janeiro");
-
-    // await waitFor(() => {
-    //   expect(city).toHaveValue("Rio de Janeiro");
-    // });
   });
 });
