@@ -28,20 +28,25 @@ const Address = () => {
               )}
               <Form.Field inline>
                 <Header size="small">Complemento</Header>
-                <Input fluid placeholder="Apartamento, bloco, ..." on />
+                <Input
+                  data-testid="cep-complemento"
+                  fluid
+                  placeholder="Apartamento, bloco, ..."
+                  on
+                />
               </Form.Field>
             </Form.Field>
             <Form.Field inline>
               <Header size="small">Bairro</Header>
-              <Input fluid value={ceps.bairro} />
+              <Input data-testid="cep-bairro" fluid value={ceps.bairro} />
             </Form.Field>
             <Form.Field inline>
               <Header size="small">Cidade</Header>
-              <Input fluid value={ceps.cidade} />
+              <Input data-testid="cep-cidade" fluid value={ceps.cidade} />
             </Form.Field>
             <Form.Field inline>
               <Header size="small">Estado</Header>
-              <Input fluid value={ceps.estado} />
+              <Input data-testid="cep-estado" fluid value={ceps.estado} />
             </Form.Field>
           </Form>
         </div>
