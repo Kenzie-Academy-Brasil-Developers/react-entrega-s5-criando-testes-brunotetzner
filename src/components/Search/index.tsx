@@ -17,6 +17,7 @@ const Search = () => {
           onChange={(event) => setCepNumber(event.target.value)}
         />
         <Button
+          data-testid="buttonSearch"
           primary
           disabled={!cepNumber}
           onClick={() => handleSearch(cepNumber)}
