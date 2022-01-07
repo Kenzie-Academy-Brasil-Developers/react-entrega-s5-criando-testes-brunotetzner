@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import App from "../../App";
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import api from "../../services/index";
