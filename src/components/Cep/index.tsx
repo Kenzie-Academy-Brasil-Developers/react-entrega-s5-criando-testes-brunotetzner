@@ -32,7 +32,6 @@ const Address = () => {
                   data-testid="cep-complemento"
                   fluid
                   placeholder="Apartamento, bloco, ..."
-                  on
                 />
               </Form.Field>
             </Form.Field>
